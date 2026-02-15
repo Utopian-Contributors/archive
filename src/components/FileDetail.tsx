@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import { Link, useParams } from "react-router";
 import type { FileEntry } from "../types";
@@ -8,10 +8,17 @@ function FileDetail({ files }: { files: FileEntry[] }) {
   const file = files.find((f) => f.slug === slug);
   const [copied, setCopied] = useState(false);
 
+  useEffect(() => {
+    if (file?.name) document.title = file.name;
+  }, [file?.name]);
+
   if (!file) {
     return (
       <div className="sticky top-0 backdrop-blur-sm max-w-3xl mx-auto p-8">
-        <Link to="/" className="inline-block mb-6 text-gray-500 no-underline text-sm hover:text-black">
+        <Link
+          to="/"
+          className="inline-block mb-6 text-gray-500 no-underline text-sm hover:text-black"
+        >
           &larr; Back
         </Link>
         <p>File not found.</p>
@@ -39,7 +46,10 @@ function FileDetail({ files }: { files: FileEntry[] }) {
   return (
     <div className="max-w-3xl mx-auto">
       <div className="sticky top-0 px-2 py-6 bg-white/95 flex items-center justify-between">
-        <Link to="/" className="text-gray-500 no-underline text-sm hover:text-black">
+        <Link
+          to="/"
+          className="text-gray-500 no-underline text-sm hover:text-black"
+        >
           &larr; Back
         </Link>
         <div className="flex gap-2">
@@ -64,7 +74,9 @@ function FileDetail({ files }: { files: FileEntry[] }) {
             alt={file.name}
             className="w-12 rounded-xs"
           />
-          <h1 className="mt-4 text-2xl font-semibold text-gray-900">{file.name}</h1>
+          <h1 className="mt-4 text-2xl font-semibold text-gray-900">
+            {file.name}
+          </h1>
         </div>
       )}
       <article className="prose prose-gray pb-12">

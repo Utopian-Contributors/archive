@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import type { FileEntry } from "../types";
 import FileCard from "./FileCard";
 
 function FileGrid({ files }: { files: FileEntry[] }) {
+  useEffect(() => {
+    document.title = "Home";
+  }, []);
+
   return (
     <div className="max-w-4xl mx-auto p-8">
       <div className="flex items-center gap-3 mb-6">
