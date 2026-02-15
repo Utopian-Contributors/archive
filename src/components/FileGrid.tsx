@@ -5,6 +5,13 @@ import FileCard from "./FileCard";
 function FileGrid({ files }: { files: FileEntry[] }) {
   useEffect(() => {
     document.title = "Home";
+
+    const saved = sessionStorage.getItem("gridScroll");
+    if (saved) requestAnimationFrame(() => window.scrollTo(0, parseInt(saved)));
+
+    const onScroll = () => { sessionStorage.setItem("gridScroll", String(window.scrollY)); };
+    window.addEventListener("scroll", onScroll);
+    return () => { window.removeEventListener("scroll", onScroll); };
   }, []);
 
   return (
