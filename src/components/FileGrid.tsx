@@ -25,7 +25,7 @@ function FileGrid({ files }: { files: FileEntry[] }) {
         ))}
       </div>
       <div className="mt-8">
-        <div className="flex gap-4">
+        <div className="flex flex-wrap gap-4">
           <div className="shadow-sm rounded-md w-fit p-2 pr-6 pb-4 border border-transparent transform hover:shadow-none hover:-translate-y-1 hover:border-gray-300 transition-all duration-300">
             <a
               href="https://tribe.utopian.build"
