@@ -1,5 +1,7 @@
 # This is for everyone
 
+## Philosophy:
+
 **No central authority should control the web**
 
 - Reject central computers, single networks, or organisations that "run" the web
