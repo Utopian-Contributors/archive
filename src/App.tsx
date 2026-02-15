@@ -9,13 +9,22 @@ const markdownFiles = import.meta.glob("/content/*.md", {
   eager: true,
 }) as Record<string, string>;
 
+const thumbnailFiles = import.meta.glob("/content/*_THUMBNAIL.png", {
+  query: "?url",
+  import: "default",
+  eager: true,
+}) as Record<string, string>;
+
 const files: FileEntry[] = Object.entries(markdownFiles).map(
   ([path, content]) => {
     const filename = path.split("/").pop()!.toUpperCase().replace(".MD", ".md");
+    const baseName = filename.replace(".md", "");
+    const thumbPath = `/content/${baseName}_THUMBNAIL.png`;
     return {
       slug: filename,
       name: filename,
       content,
+      thumbnail: thumbnailFiles[thumbPath],
     };
   }
 );

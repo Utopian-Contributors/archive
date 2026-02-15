@@ -57,6 +57,16 @@ function FileDetail({ files }: { files: FileEntry[] }) {
           </button>
         </div>
       </div>
+      {file.thumbnail && (
+        <div className="flex items-end gap-2 mb-6">
+          <img
+            src={file.thumbnail}
+            alt={file.name}
+            className="w-12 rounded-xs"
+          />
+          <h1 className="mt-4 text-2xl font-semibold text-gray-900">{file.name}</h1>
+        </div>
+      )}
       <article className="prose prose-gray pb-12">
         <Markdown>{file.content}</Markdown>
       </article>
