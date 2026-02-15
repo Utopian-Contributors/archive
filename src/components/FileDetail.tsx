@@ -68,7 +68,7 @@ function FileDetail({ files }: { files: FileEntry[] }) {
         </div>
       </div>
       {file.thumbnail && (
-        <div className="flex items-end gap-2 mb-6">
+        <div className="flex items-end gap-2 px-6 mb-6">
           <img
             src={file.thumbnail}
             alt={file.name}
@@ -79,7 +79,7 @@ function FileDetail({ files }: { files: FileEntry[] }) {
           </h1>
         </div>
       )}
-      <article className="prose prose-gray pb-12">
+      <article className="prose prose-gray px-6 pb-12">
         <Markdown>{file.content}</Markdown>
       </article>
     </div>
