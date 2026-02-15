@@ -67,7 +67,7 @@ function FileGrid({ files }: { files: FileEntry[] }) {
         >
           Privacy Policy
         </a>
-        <a href="https://pump.fun/coin/HGTXnhgyast5fJKhMcE4VgyeEVWhYKEsHxpZtpjhrYqA" className="truncate">
+        <a href="https://pump.fun/coin/HGTXnhgyast5fJKhMcE4VgyeEVWhYKEsHxpZtpjhrYqA" className="truncate hover:text-gray-600">
           HGTXnhgyast5fJKhMcE4VgyeEVWhYKEsHxpZtpjhrYqA
         </a>
       </footer>
