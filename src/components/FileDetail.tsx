@@ -9,8 +9,9 @@ function FileDetail({ files }: { files: FileEntry[] }) {
   const [copied, setCopied] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (file?.name) document.title = file.name;
-  }, [file?.name]);
+  }, [slug]);
 
   if (!file) {
     return (
@@ -45,7 +46,7 @@ function FileDetail({ files }: { files: FileEntry[] }) {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <div className="sticky top-0 px-2 py-6 bg-white/95 flex items-center justify-between">
+      <div className="sticky top-0 px-6 py-6 bg-white/95 flex items-center justify-between">
         <Link
           to="/"
           className="text-gray-500 no-underline text-sm hover:text-black"
