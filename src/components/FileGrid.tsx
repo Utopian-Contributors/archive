@@ -49,7 +49,7 @@ function FileGrid({ files }: { files: FileEntry[] }) {
           </div>
         </div>
       </div>
-      <footer className="mt-12 pt-6 border-t border-gray-200 flex gap-4 text-sm text-gray-400">
+      <footer className="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row gap-4 text-sm text-gray-400">
         <p>© {new Date().getFullYear()} Utopian Contributors LLC</p>
         <a
           href="/terms-of-service.pdf"
@@ -67,7 +67,7 @@ function FileGrid({ files }: { files: FileEntry[] }) {
         >
           Privacy Policy
         </a>
-        <a href="https://pump.fun/coin/HGTXnhgyast5fJKhMcE4VgyeEVWhYKEsHxpZtpjhrYqA">
+        <a href="https://pump.fun/coin/HGTXnhgyast5fJKhMcE4VgyeEVWhYKEsHxpZtpjhrYqA" className="truncate">
           HGTXnhgyast5fJKhMcE4VgyeEVWhYKEsHxpZtpjhrYqA
         </a>
       </footer>
