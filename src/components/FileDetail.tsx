@@ -72,9 +72,9 @@ function FileDetail({ files }: { files: FileEntry[] }) {
           <img
             src={file.thumbnail}
             alt={file.name}
-            className="w-12 rounded-xs"
+            className="w-12 rounded-sm border border-gray-300"
           />
-          <h1 className="mt-4 text-2xl font-semibold text-gray-900">
+          <h1 className="mt-4 text-2xl font-semibold underline text-gray-900">
             {file.name}
           </h1>
         </div>
