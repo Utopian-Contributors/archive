@@ -43,17 +43,6 @@ function FileGrid({ files }: { files: FileEntry[] }) {
               <p className="ml-4 text-gray-500">Everything your app needs.</p>
             </a>
           </div>
-
-          <div className="shadow-sm rounded-md w-fit p-2 pr-6 pb-4 border border-transparent transform hover:shadow-none hover:-translate-y-1 hover:border-gray-300 transition-all duration-300">
-            <a
-              href="https://turbine.utopian.build"
-              target="_blank"
-              className="w-fit"
-            >
-              <img src="/turbine-wordmark.webp" className="h-20" />
-              <p className="ml-4 text-gray-500">Faster than the competition.</p>
-            </a>
-          </div>
         </div>
       </div>
       <footer className="mt-12 pt-6 border-t border-gray-200 flex flex-col md:flex-row gap-4 text-sm text-gray-400">
