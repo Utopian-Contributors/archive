@@ -39,7 +39,7 @@ function FileGrid({ files }: { files: FileEntry[] }) {
               target="_blank"
               className="w-fit"
             >
-              <img src="/tribe-wordmark.webp" className="h-20" />
+              <img src="/tribe-wordmark.png" className="h-20" />
               <p className="ml-4 text-gray-500">Everything your app needs.</p>
             </a>
           </div>
