@@ -9,9 +9,13 @@ function FileGrid({ files }: { files: FileEntry[] }) {
     const saved = sessionStorage.getItem("gridScroll");
     if (saved) requestAnimationFrame(() => window.scrollTo(0, parseInt(saved)));
 
-    const onScroll = () => { sessionStorage.setItem("gridScroll", String(window.scrollY)); };
+    const onScroll = () => {
+      sessionStorage.setItem("gridScroll", String(window.scrollY));
+    };
     window.addEventListener("scroll", onScroll);
-    return () => { window.removeEventListener("scroll", onScroll); };
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (
@@ -34,13 +38,26 @@ function FileGrid({ files }: { files: FileEntry[] }) {
       <div className="mt-8">
         <div className="flex flex-wrap gap-4">
           <div className="shadow-sm rounded-md w-fit p-2 pr-6 pb-4 border border-transparent transform hover:shadow-none hover:-translate-y-1 hover:border-gray-300 transition-all duration-300">
+            <a href="https://utopian.build" target="_blank" className="w-fit">
+              <div className="ml-2 flex gap-1 items-center">
+                <img src="/browser-icon.png" className="h-20" />
+                <h1 className="max-w-34 text-3xl font-medium text-gray-800">
+                  Utopian
+                </h1>
+              </div>
+              <p className="ml-4 text-gray-500">
+                The web browser of the future.
+              </p>
+            </a>
+          </div>
+          <div className="shadow-sm rounded-md w-fit p-2 pr-6 pb-4 border border-transparent transform hover:shadow-none hover:-translate-y-1 hover:border-gray-300 transition-all duration-300">
             <a
               href="https://tribe.utopian.build"
               target="_blank"
               className="w-fit"
             >
-              <img src="/tribe-wordmark.png" className="h-20" />
-              <p className="ml-4 text-gray-500">Everything your app needs.</p>
+              <img src="/tribe-wordmark.webp" className="h-20" />
+              <p className="ml-4 text-gray-500">Everything that an app needs.</p>
             </a>
           </div>
         </div>
@@ -63,7 +80,10 @@ function FileGrid({ files }: { files: FileEntry[] }) {
         >
           Privacy Policy
         </a>
-        <a href="https://pump.fun/coin/HGTXnhgyast5fJKhMcE4VgyeEVWhYKEsHxpZtpjhrYqA" className="truncate hover:text-gray-600">
+        <a
+          href="https://pump.fun/coin/HGTXnhgyast5fJKhMcE4VgyeEVWhYKEsHxpZtpjhrYqA"
+          className="truncate hover:text-gray-600"
+        >
           HGTXnhgyast5fJKhMcE4VgyeEVWhYKEsHxpZtpjhrYqA
         </a>
       </footer>
